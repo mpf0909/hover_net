@@ -100,7 +100,7 @@ def get_dataset(name):
     """Return a pre-defined dataset object associated with `name`."""
     name_dict = {
         "kumar": lambda: __Kumar(),
-        "CPM17": lambda: __CPM17(),
+        "cpm17": lambda: __CPM17(),
         "consep": lambda: __CoNSeP(),
     }
     if name.lower() in name_dict:
