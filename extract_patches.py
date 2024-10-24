@@ -20,7 +20,7 @@ from dataset import get_dataset
 if __name__ == "__main__":
 
     # Determines whether to extract type map (only applicable to datasets with class labels).
-    type_classification = True
+    type_classification = False
 
     win_size = [540, 540]
     step_size = [164, 164]
@@ -28,18 +28,18 @@ if __name__ == "__main__":
 
     # Name of dataset - use Kumar, CPM17 or CoNSeP.
     # This used to get the specific dataset img and ann loading scheme from dataset.py
-    dataset_name = "CPM17"
+    dataset_name = "cpm17"
     save_root = "dataset/training_data/%s/" % dataset_name
 
     # a dictionary to specify where the dataset path should be
     dataset_info = {
         "train": {
-            "img": (".png", "dataset/cpm17/train/Images/"),
-            "ann": (".mat", "dataset/cpm17/train/Labels/"),
+            "img": (".png", "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/cpm17/train/Images/"),
+            "ann": (".mat", "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/cpm17/train/Labels/"),
         },
         "valid": {
-            "img": (".png", "dataset/cpm17/test/Images/"),
-            "ann": (".mat", "dataset/cpm17/test/Labels/"),
+            "img": (".png", "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/cpm17/test/Images/"),
+            "ann": (".mat", "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/cpm17/test/Labels/"),
         },
     }
 
@@ -98,3 +98,5 @@ if __name__ == "__main__":
 
             pbarx.update()
         pbarx.close()
+
+# test
