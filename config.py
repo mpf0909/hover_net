@@ -49,10 +49,10 @@ class Config(object):
 
         # paths to training and validation patches
         self.train_dir_list = [
-            "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/training_data/cpm17/cpm17/train/540x540_164x164/"
+            "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/training_data/CPM17/CPM17/train/540x540_164x164/"
         ]
         self.valid_dir_list = [
-            "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/training_data/cpm17/cpm17/valid/540x540_164x164/"
+            "/rds/user/mf774/hpc-work/hovernet/hover_net/dataset/training_data/CPM17/CPM17/valid/540x540_164x164/"
         ]
 
         self.shape_info = {
