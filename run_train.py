@@ -84,12 +84,22 @@ class TrainManager(Config):
         target_info = phase_list["target_info"]
         prep_func, prep_kwargs = target_info["viz"]
         dataloader = self._get_datagen(2, mode, target_info["gen"])
+        i=0
         for batch_data in dataloader:  
             # convert from Tensor to Numpy
             batch_data = {k: v.numpy() for k, v in batch_data.items()}
             viz = prep_func(batch_data, is_batch=True, **prep_kwargs)
             plt.imshow(viz)
-            plt.show()
+
+            if False:
+              filename = 'plt%03d.png' % i
+              print('saving %s' % filename)
+              plt.savefig(filename,dpi=300) 
+            else:
+              if i % 25 == 0:
+                print('showing image %d' % i)
+              plt.show()
+            i+=1
         self.nr_gpus = -1
         return
 

@@ -6,6 +6,7 @@ import numpy as np
 
 from dataset import get_dataset
 
+
 class Config(object):
     """Configuration file."""
 
@@ -23,10 +24,17 @@ class Config(object):
         if model_mode not in ["original", "fast"]:
             raise Exception("Must use either `original` or `fast` as model mode")
 
-        nr_type = 5 # number of nuclear types (including background)
+        # for python run_train.py --view='train' with CPM17
+        # nr_type=0
+        # self.type_classification=False
+        # previous values were:
+        # nr_type=5
+        # self.type_classification=True
+
+        nr_type = 0 # number of nuclear types (including background)
 
         # whether to predict the nuclear type, availability depending on dataset!
-        self.type_classification = True
+        self.type_classification = False
 
         # shape information - 
         # below config is for original mode. 
@@ -65,4 +73,5 @@ class Config(object):
         module = importlib.import_module(
             "models.%s.opt" % model_name
         )
+        print("module",module)
         self.model_config = module.get_config(nr_type, model_mode)
