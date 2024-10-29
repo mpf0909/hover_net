@@ -95,7 +95,7 @@ class FileLoader(torch.utils.data.Dataset):
 
         inst_map = ann[..., 0]  # HW1 -> HW
         if self.with_type:
-            print(ann[..., 1])
+            print(ann)
             type_map = (ann[..., 1]).copy()
             type_map = cropping_center(type_map, self.mask_shape)
             #type_map[type_map == 5] = 1  # merge neoplastic and non-neoplastic
