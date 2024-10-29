@@ -6,7 +6,6 @@ import numpy as np
 
 from dataset import get_dataset
 
-
 class Config(object):
     """Configuration file."""
 
