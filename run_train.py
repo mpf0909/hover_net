@@ -134,7 +134,8 @@ class TrainManager(Config):
         dataloader = DataLoader(
             input_dataset,
             num_workers=nr_procs,
-            batch_size=batch_size * self.nr_gpus,
+            # batch_size = batch_size * self.nr_gpus
+            batch_size=10
             shuffle=run_mode == "train",
             drop_last=run_mode == "train",
             worker_init_fn=worker_init_fn,
