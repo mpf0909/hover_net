@@ -147,6 +147,8 @@ class HoVerNet(Net):
 
 ####
 def create_model(mode=None, **kwargs):
+    print("mode", mode)
+    print("kwargs", kwargs)
     if mode not in ['original', 'fast']:
         assert "Unknown Model Mode %s" % mode
     return HoVerNet(mode=mode, **kwargs)
