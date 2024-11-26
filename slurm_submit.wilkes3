@@ -59,11 +59,11 @@ module load rhel8/default-amp              # REQUIRED - loads the basic environm
 
 #! Run options for the application:
 echo array index ${SLURM_ARRAY_TASK_ID} array index plus one $((SLURM_ARRAY_TASK_ID + 1))
-options="$(head -n $((SLURM_ARRAY_TASK_ID + 1)) job-scripts/CSD3/exp.txt | tail -1) "
+options="$(head -n $((SLURM_ARRAY_TASK_ID + 1)) exp.txt | tail -1) "
 
 #! Work directory (i.e. where the job will run):
 workdir="$SLURM_SUBMIT_DIR"  # The value of SLURM_SUBMIT_DIR sets workdir to the directory
-                             # in which sbatch is run.
+                             # in which sbatch is run.``
 
 #! Are you using OpenMP (NB this is unrelated to OpenMPI)? If so increase this
 #! safe value to no more than 128:
