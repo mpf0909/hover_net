@@ -31,7 +31,7 @@ class Config(object):
         # nr_type=5
         # self.type_classification=True
 
-        nr_type = 0 # number of nuclear types (including background)
+        nr_type = None # number of nuclear types (including background)
 
         # whether to predict the nuclear type, availability depending on dataset!
         self.type_classification = False
