@@ -25,7 +25,7 @@ class Config(object):
             raise Exception("Must use either `original` or `fast` as model mode")
 
         # for python run_train.py --view='train' with CPM17
-        # nr_type=0
+        # nr_type=None
         # self.type_classification=False
         # previous values were:
         # nr_type=5
